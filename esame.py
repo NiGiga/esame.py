@@ -73,9 +73,6 @@ class CSVTimeSeriesFile():
                 date = datetime.datetime.strptime(date_string, CSV_DATE_FORMAT)
                 element[0] = date
 
-                element[1] = element[1].strip()
-                element[1] = float(element[1])
-
                 chack=True
             except Exception as e:
                 print(f"line `{line}` is not valid")
@@ -139,7 +136,7 @@ def compute_avg_monthly_difference(time_series, first_year, last_year):
 
     chack = True
     try:
-    # converting to integer
+    # converto a int
         int(first_year)
         int(last_year)
     except ValueError:
@@ -192,7 +189,7 @@ def compute_avg_monthly_difference(time_series, first_year, last_year):
             if string_row[0] in range(int(first_year), int(last_year) + 1):
 
                 if string_row[1] == i:
-                    # allora l'aggiungo a time_pos
+                    # allora l'aggiungo a temporary
                     temporary.append(string_row[2])
 
                 # passato
@@ -202,7 +199,7 @@ def compute_avg_monthly_difference(time_series, first_year, last_year):
         if check == False:
             raise ExamException('Error, year not found')
 
-        # Controlla se l'indice corrente è inferiore alla lunghezza dell'elenco meno 1.Se lo è stampo il valore dell'indice.
+        # controllo se l'indice corrente è inferiore alla lunghezza dell'elenco.Se lo è stampo il valore dell'indice.
         for i in range(0, len(temporary) - 1):
             # Calcolo la differenza dei passeggeri
             y += temporary[i + 1] - temporary[i]
@@ -215,6 +212,7 @@ def compute_avg_monthly_difference(time_series, first_year, last_year):
         
         avarange.append(a)
 
+        #arrotondo
         rounded_avarange=  [round(x,1) for x in avarange] 
 
     return rounded_avarange
