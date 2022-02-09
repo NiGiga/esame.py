@@ -2,7 +2,7 @@
 # Corso di studi AIDA
 # Programming Lab
 # Traccia https://docs.google.com/document/d/e/2PACX-1vSkUlMTmmHutE6c4q_6SIByt7VEP2n2BmA8r-O7ulbtGuBKtxKQF9cPv36fR0AbGKu538rtM9PzDpJd/pub
-# Autore: Nicola
+# Autore: Nicola Gigante
 # Data: 09/02/2022
 #########################################
 
